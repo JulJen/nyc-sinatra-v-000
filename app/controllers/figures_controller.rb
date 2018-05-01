@@ -28,18 +28,18 @@ class FiguresController <ApplicationController
   end
 
   get '/figures/:id' do
-    @figure = Figure.find_by_id(params[:id])
+    @figure = Figure.find(params[:id])
     erb :'/figures/show'
   end
 
   get '/figures/:id/edit' do
-    @figure = Figure.find_by_id(params[:id])
+    @figure = Figure.find(params[:id])
 
     erb :'/figures/edit'
   end
 
   patch '/figures/:id' do
-    @figure = Figure.find_by_id(params[:id])
+    @figure = Figure.find(params[:id])
     @figure.update(params[:figure])
     #Edit titles
     if !params[:title][:name].empty?
