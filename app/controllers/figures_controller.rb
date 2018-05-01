@@ -10,7 +10,7 @@ class FiguresController <ApplicationController
   end
 
   post '/figures' do
-    @figure = Figure.create(params["figure"])
+    @figure = Figure.create(params[:figure])
 
     #Add new landmarks
     if !params[:landmark][:name].empty?
@@ -54,7 +54,6 @@ class FiguresController <ApplicationController
   end
 
 end
-
 # it "allows you to edit a single figure" do
 #   @original_figure = Figure.first
 #   visit "/figures/#{@original_figure.id}/edit"
