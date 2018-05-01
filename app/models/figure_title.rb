@@ -1,6 +1,6 @@
 class FigureTitle < ActiveRecord::Base
 
-  belongs_to :name
+  belongs_to :title
   belongs_to :figure
 
 end
