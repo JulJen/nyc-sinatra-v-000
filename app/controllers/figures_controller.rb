@@ -42,7 +42,7 @@ class FiguresController <ApplicationController
     @figure.update(params[:figure])
     #Edit titles
     if !params[:title][:name].empty?
-     @figure.titles << Title.create(params[:title])
+      @figure.titles << Title.find_or_create_by(params[:title])
     end
     #Edit landmarks
     if !params[:landmark][:name].empty?
