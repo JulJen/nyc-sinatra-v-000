@@ -1,7 +1,8 @@
 <h2>Figure: <%=@figure.name%></h2>
 
 <h2>Figure Landmarks:</h2>
-<% Figure.all.landmarks.each do |landmark|%>
+<% @figure = Figure.all %>
+<% @figure.landmarks.each do |landmark|%>
   <%= landmark.name%>
 <% end %>
 
