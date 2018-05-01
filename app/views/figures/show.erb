@@ -1,17 +1,10 @@
-<h1>Figure: <%=@figure.name%></h1>
-
-<% if @figure.titles.length == 0 %>
-"Titles - Not working!"
-<% end %>
+<h2>Figure: <%=@figure.name%></h2>
 
 <% if @figure.landmarks.length == 0 %>
 "Landmarks - Not working!"
 <% end %>
 
-<h2>Figure Name:</h2>
- <%=@figure.name%>
-
-<h3>Figure Landmarks's:</h3>
+<h2>Figure Landmarks's:</h2>
  <% @figure.landmarks.each do |landmark|%>
  <%= landmark.name%>
 <% end %>
