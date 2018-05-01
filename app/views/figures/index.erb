@@ -1,5 +1,9 @@
 <h1>Listing all Figures</h1>
 
+<% if @figures.length == 0 %>
+"Not working!!!"
+<% end %>
+
 <ol>
 <% @figures.each do |figure| %>
   <li><%= figure.name %></a></li>
