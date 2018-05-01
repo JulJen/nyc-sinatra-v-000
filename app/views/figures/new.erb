@@ -8,7 +8,7 @@
 
   <label>Choose existing title(s):</label>
   <% Title.all.each do |title| %>
-    <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"<%= title.name %>>
+    <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"<%='checked' if @figure.title_ids.include?(title.id)%>><%= title.name %>
   <% end %>
 
   <br></br>
@@ -20,7 +20,7 @@
 
   <label>Choose existing landmark:</label>
   <% Landmark.all.each do |landmark| %>
-    <input id="landmark_<%= landmark.id %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"<%= landmark.name %>>
+    <input id="landmark_<%= landmark.id %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" <%='checked' if @figure.landmark_ids.include?(landmark.id)%>><%= landmark.name %>
   <% end %>
 
   <br></br>
