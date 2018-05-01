@@ -10,7 +10,7 @@
 
   <label>Choose Figure Titles: </label>
   <% Title.all.each do |title| %>
-      <input id="<%= title.name %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"<%= 'checked' if @figure.titles_ids.include?(title) %><%= title.name %>
+      <input id="<%= title.name %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"<%= 'checked' if @figure.titles_ids.include?(title) %>><%= title.name %>
   <% end %>
 
   <br></br>
@@ -22,7 +22,7 @@
 
   <label>Choose landmarks: </label>
   <% Landmark.all.each do |landmark| %>
-    <input id="<%= landmark.id %>" type="checkbox" name="figure[landmark_ids]" value="<%= landmark.id %>"><%='checked' if @figure.landmark_ids.include?(landmark.id)%><%= landmark.name %>
+    <input id="<%= landmark.name %>" type="checkbox" name="figure[landmark_ids]" value="<%= landmark.id %>"><%='checked' if @figure.landmark_ids.include?(landmark.id)%><%= landmark.name %>
   <% end %>
 
   <br></br>
