@@ -1,10 +1,5 @@
 class FiguresController <ApplicationController
 
-  get '/figures' do
-    @figures = Figure.all
-    erb :'figures/index'
-  end
-
   get '/figures/new' do
     erb :'figures/new'
   end
@@ -20,9 +15,14 @@ class FiguresController <ApplicationController
     if !params[:title][:name].empty?
      @figure.titles << Title.create(params[:title])
     end
-    
+
     @figure.save
     redirect "/figures/#{@figure.id}"
+  end
+
+  get '/figures' do
+    @figures = Figure.all
+    erb :'figures/index'
   end
 
   get '/figures/:id' do
