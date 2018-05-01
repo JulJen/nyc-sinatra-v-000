@@ -10,7 +10,7 @@
 
   <label>Choose Figure Titles: </label>
   <% Title.all.each do |title| %>
-      <input id="<%= title.id %>" type="checkbox" name="figure[title_ids]" value="<%= title.name %>"><%= 'checked' if @figure.titles_ids.include?(title) %><%= title.name %>
+      <input id="<%= title.id %>" type="checkbox" name="figure[title_ids]" value="<%= title.name %>"><%= 'checked' if @figure.titles_ids.include?(title.id) %><%= title.name %>
   <% end %>
 
   <br></br>
