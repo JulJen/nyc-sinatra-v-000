@@ -10,7 +10,7 @@ class FiguresController <ApplicationController
   end
 
   post '/figures' do
-    @figure = Figure.create(params[:figure])
+    @figure = Figure.create(params["figure"])
 
     #Add new landmarks
     if !params[:landmark][:name].empty?
@@ -48,9 +48,16 @@ class FiguresController <ApplicationController
     if !params[:landmark][:name].empty?
      @figure.landmarks << Landmark.create(params[:landmark])
     end
-    
+
     @figure.save
     redirect "/figures/#{@figure.id}"
   end
 
 end
+
+# it "allows you to edit a single figure" do
+#   @original_figure = Figure.first
+#   visit "/figures/#{@original_figure.id}/edit"
+#   fill_in :figure_name, with: "Missy"
+#   fill_in :new_landmark, with: "Big Tower"
+#   click_button "Edit Figure"
